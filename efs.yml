@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+  Parameters:
+  Resources:
+  Myefs:
+    Type: AWS::EFS::FileSystem
+    Properties: 
+      LifecyclePolicies: 
+        - TransitionToIA: AFTER_90_DAYS
+      PerformanceMode: 
+        - generalPurpose 
+      ThroughputMode: 
+        - bursting 
+  Outputs:
+  StackEFS:
+  Description: Security Group SSH output
+  Value: !Ref Myefs
+  Export:
+    Name: EFS

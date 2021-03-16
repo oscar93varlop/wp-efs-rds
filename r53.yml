@@ -1,0 +1,17 @@
+  AWSTemplateFormatVersion: '2010-09-09'
+  Parameters:
+    # Parametros para dominio  
+    DomainName:
+      Description: Nombre del dominio
+      Type: String
+  Resources:
+    hostedZoneName:
+      Type: AWS::Route53::HostedZone
+      Properties: 
+        Name: !Ref DomainName
+  Outputs:
+    StackRoute53domain:
+      Description: Local ID hosted zone output
+      Value: !Ref hostedZoneName
+      Export:
+        Name: DomainName
