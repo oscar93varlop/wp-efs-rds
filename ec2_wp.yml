@@ -29,7 +29,7 @@
         ImageId: "ami-042e8287309f5df03"
         SecurityGroups:
           Fn::ImportValue:
-            !Sub "${NetworkStackNameParameter}-SecurityGroupID"
+            !Sub "${NetworkStackName}-SecurityGroupID"
             #SecurityGroupSSH
         UserData:
           Fn::Base64:  |
