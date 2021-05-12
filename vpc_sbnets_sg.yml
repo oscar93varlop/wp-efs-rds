@@ -31,7 +31,7 @@ Outputs:
     Description: Security Group SSH output
     Value:
       'Fn::GetAtt':
-        - StackSSHSecurityGroup
+        - MySecurityGroupSSH
         - GroupId
     Export:
       Name:
