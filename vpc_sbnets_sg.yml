@@ -29,10 +29,6 @@ Resources:
 Outputs:
   StackSSHSecurityGroup:
     Description: Security Group SSH output
-    Value:
-      'Fn::GetAtt':
-        - MySecurityGroupSSH
-        - GroupId
+    Value: !Ref MySecurityGroupSSH
     Export:
-      Name:
-        'Fn::Sub': '${AWS::StackName}-SecurityGroupID'
+      Name: SecurityGroupSSH

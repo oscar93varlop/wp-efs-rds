@@ -28,9 +28,7 @@
         KeyName: !Ref KeyPairName
         ImageId: "ami-042e8287309f5df03"
         SecurityGroups:
-          Fn::ImportValue:
-            !Sub "${NetworkStackName}-SecurityGroupID"
-            #SecurityGroupSSH
+          - !ImportValue SecurityGroupSSH 
         UserData:
           Fn::Base64:  |
               #!/bin/bash
