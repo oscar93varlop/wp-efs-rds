@@ -32,3 +32,8 @@ Outputs:
     Value: !Ref MySecurityGroupSSH
     Export:
       Name: SecurityGroupSSH
+    StackSSHSG:
+    Description: Security Group SSH output
+    Value: !GetAtt MySecurityGroupSSH.GroupId
+    Export:
+      Name: MySG
